@@ -1,0 +1,8 @@
+<resources>
+    <color name="bg">#101418</color>
+    <color name="bar">#1A2026</color>
+    <color name="drawer">#161B20</color>
+    <color name="text">#E6E9EC</color>
+    <color name="sub">#8E99A3</color>
+    <color name="accent">#3DDC84</color>
+</resources>

@@ -1,0 +1,8 @@
+0A8E=3,%3d% = %1d% + %2d% ; int
+0A8F=3,%3d% = %1d% - %2d% ; int
+0A93=0,terminate_this_custom_script
+0AAB=1,file_exists %1d%
+0ACA=1,show_text_box %1d%
+0ACB=3,show_styled_text %1d% time %2d% style %3d%
+3A13=2,aml_show_toast %2s% longer %1d%
+3A11=1,aml_vibrate %1d% ms

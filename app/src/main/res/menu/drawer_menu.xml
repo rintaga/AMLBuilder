@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/grp_files" android:title="Files">
+        <menu>
+            <item android:id="@+id/nav_new" android:icon="@drawable/ic_new" android:title="New" />
+            <item android:id="@+id/nav_open" android:icon="@drawable/ic_open" android:title="Open" />
+            <item android:id="@+id/nav_save" android:icon="@drawable/ic_save" android:title="Save" />
+            <item android:id="@+id/nav_search" android:icon="@drawable/ic_search" android:title="Search opcode" />
+        </menu>
+    </item>
+    <item android:id="@+id/grp_cleo" android:title="CLEO Scripts">
+        <menu>
+            <item android:id="@+id/nav_compile" android:icon="@drawable/ic_build" android:title="Compile" />
+            <item android:id="@+id/nav_decompile" android:icon="@drawable/ic_code" android:title="Decompile" />
+        </menu>
+    </item>
+    <item android:id="@+id/grp_game" android:title="Game">
+        <menu>
+            <item android:id="@+id/nav_game" android:title="Select Game" />
+        </menu>
+    </item>
+</menu>

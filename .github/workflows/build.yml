@@ -1,0 +1,28 @@
+name: Build AML Builder
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Ambil daftar opcode dari GTA_CLEOMod
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/AndroidModLoader/GTA_CLEOMod/RUSJJ_CLEO_MOD/README.md -o readme.md || true
+          grep -E '^[0-9A-Fa-f]{4}=' readme.md | tr -d '\r' > ops.txt || true
+          if [ -s ops.txt ]; then cp ops.txt app/src/main/assets/opcodes.txt; fi
+          echo "Jumlah opcode: $(wc -l < app/src/main/assets/opcodes.txt)"
+      - uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
+      - run: gradle assembleDebug --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AML-Builder-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
